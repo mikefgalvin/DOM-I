@@ -102,11 +102,28 @@ const footer = document.querySelector("footer");
 // --------------------- Changes -------------------
 //Header Changes
 link1headerNav.textContent = "Services";
+link1headerNav.style.color = "green";
 link2headerNav.textContent = "Product";
+link2headerNav.style.color = "green";
 link3headerNav.textContent = "Vision";
+link3headerNav.style.color = "green";
 link4headerNav.textContent = "Features";
+link4headerNav.style.color = "green";
 link5headerNav.textContent = "About";
+link5headerNav.style.color = "green";
 link6headerNav.textContent = "Contact";
+link6headerNav.style.color = "green";
+
+const navLink1 = document.createElement("a");
+  navLink1.textContent = "Added 1"
+  navLink1.href = "#";
+  navLink1.style.color = "green";
+  document.querySelector("nav").appendChild(navLink1);
+const navLink2 = document.createElement("a");
+  navLink2.textContent = "Added 2"
+  navLink2.href = "#";
+  navLink2.style.color = "green";
+  document.querySelector("nav").prepend(navLink2);
 
 //CTA Changes
 titleCTA.setAttribute('style', 'white-space: pre;');
