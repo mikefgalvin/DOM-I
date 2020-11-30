@@ -51,7 +51,7 @@ const mainContainer = document.querySelector(".container");
 
 //Header Selectors
 const header = document.querySelector("header");
-  const headerImage = header.querySelector("img");
+  const headerImage = header.querySelector("#logo-img");
   const headerNav = header.querySelector("nav");
   const link1headerNav = header.querySelector("a");
   const link2headerNav = link1headerNav.nextElementSibling;
@@ -64,7 +64,7 @@ const header = document.querySelector("header");
 const cta = document.querySelector(".cta");
   const titleCTA = cta.querySelector("h1");
   const buttonCTA = cta.querySelector("button");
-  const ctaImage = cta.querySelector("img");
+  const ctaImage = cta.querySelector("#cta-img");
   
 
 //Main Content Selectors

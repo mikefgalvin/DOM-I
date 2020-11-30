@@ -27,7 +27,7 @@ You have been provided a [JSON object](js/index.js) with all the necessary data 
 #### Create selectors to point your data into elements
 
 * [X] Create selectors by using any of the DOM element's methods
-* [ ] Note that IDs have been used on all images. Use the IDs to update src path content
+* [X] Note that IDs have been used on all images. Use the IDs to update src path content
 
 #### Update the HTML with the JSON data
 
@@ -39,7 +39,7 @@ You have been provided a [JSON object](js/index.js) with all the necessary data 
 
 * [X] Change the color of the navigation text to be green.
 * [X] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
-* [ ] Check your work by looking at the [original html](original.html) in the browser
+* [X] Check your work by looking at the [original html](original.html) in the browser
 
 ### Task 3: Stretch
 
