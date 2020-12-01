@@ -47,24 +47,28 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // ------------- Selectors ----------------
 //Main Selectors
-const mainContainer = document.querySelector(".container");
+// const mainContainer = document.querySelector(".container")
 
 //Header Selectors
 const header = document.querySelector("header");
   const headerImage = header.querySelector("#logo-img");
-  const headerNav = header.querySelector("nav");
-  const link1headerNav = header.querySelector("a");
-  const link2headerNav = link1headerNav.nextElementSibling;
-  const link3headerNav = link2headerNav.nextElementSibling;
-  const link4headerNav = link3headerNav.nextElementSibling;
-  const link5headerNav = link4headerNav.nextElementSibling;
-  const link6headerNav = link5headerNav.nextElementSibling;
+  const headerNav = header.querySelectorAll("nav a");
+
+
+  // const link1headerNav = header.querySelector("a");
+  // const link2headerNav = link1headerNav.nextElementSibling;
+  // const link3headerNav = link2headerNav.nextElementSibling;
+  // const link4headerNav = link3headerNav.nextElementSibling;
+  // const link5headerNav = link4headerNav.nextElementSibling;
+  // const link6headerNav = link5headerNav.nextElementSibling;
 
 //CTA Selectors
 const cta = document.querySelector(".cta");
   const titleCTA = cta.querySelector("h1");
   const buttonCTA = cta.querySelector("button");
   const ctaImage = cta.querySelector("#cta-img");
+
+  
   
 
 //Main Content Selectors
@@ -101,18 +105,19 @@ const footer = document.querySelector("footer");
 
 // --------------------- Changes -------------------
 //Header Changes
-link1headerNav.textContent = "Services";
-link1headerNav.style.color = "green";
-link2headerNav.textContent = "Product";
-link2headerNav.style.color = "green";
-link3headerNav.textContent = "Vision";
-link3headerNav.style.color = "green";
-link4headerNav.textContent = "Features";
-link4headerNav.style.color = "green";
-link5headerNav.textContent = "About";
-link5headerNav.style.color = "green";
-link6headerNav.textContent = "Contact";
-link6headerNav.style.color = "green";
+
+headerNav.forEach((item, index) => item.textContent = siteContent.nav[`nav-item-${index.toString()}`]);
+
+// link1headerNav.textContent = "Services";
+// link2headerNav.textContent = "Product";
+// link3headerNav.textContent = "Vision";
+// link4headerNav.textContent = "Features";
+// link5headerNav.textContent = "About";
+// link6headerNav.textContent = "Contact";
+
+//Goes through list and turns to green
+headerNav.forEach((item) => item.style.color = "green");
+
 
 const navLink1 = document.createElement("a");
   navLink1.textContent = "Added 1"
@@ -126,33 +131,54 @@ const navLink2 = document.createElement("a");
   document.querySelector("nav").prepend(navLink2);
 
 //CTA Changes
-titleCTA.setAttribute('style', 'white-space: pre;');
-titleCTA.textContent = "DOM \r\n";
-titleCTA.textContent += "Is \r\n";
-titleCTA.textContent += "Awesome";
-ctaImage.src = "img/header-img.png";
-buttonCTA.textContent = "Get Started";
+// titleCTA.setAttribute('style', 'white-space: pre;');
+// titleCTA.textContent = "DOM \r\n";
+// titleCTA.textContent += "Is \r\n";
+// titleCTA.textContent += "Awesome";
+// titleCTA.style.color = "lightblue";
+// ctaImage.src = "img/header-img.png";
+// buttonCTA.textContent = "Get Started";
+
+titleCTA.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
+ctaImage.src = siteContent.cta["img-src"];
+buttonCTA.textContent = siteContent.cta.button;
 
 //Main Content Changes
-topDivTitle.textContent = "Features";
-topDivPar.textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-topDivTitle2.textContent = "About";
-topDivPar2.textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-mainContentImage.src = "img/mid-page-accent.jpg";
-bottomDivTitle.textContent = "Services";
-bottomDivPar.textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-bottomDivTitle2.textContent = "Product";
-bottomDivPar2.textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-bottomDivTitle3.textContent = "Vision";
-bottomDivPar3.textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+
+topDivTitle.textContent = siteContent["main-content"]["features-h4"];
+topDivPar.textContent = siteContent["main-content"]["features-content"];
+
+topDivTitle2.textContent = siteContent["main-content"]["about-h4"];
+topDivPar2.textContent = siteContent["main-content"]["about-content"];
+
+mainContentImage.src = siteContent["main-content"]["middle-img-src"];
+
+bottomDivTitle.textContent = siteContent["main-content"]["services-h4"];
+bottomDivPar.textContent = siteContent["main-content"]["services-content"];
+
+bottomDivTitle2.textContent = siteContent["main-content"]["product-h4"];
+bottomDivPar2.textContent = siteContent["main-content"]["product-content"];
+
+bottomDivTitle3.textContent = siteContent["main-content"]["vision-h4"];
+bottomDivPar3.textContent = siteContent["main-content"]["vision-content"];
+
 
 //Contact Changes
-contactTitle.textContent = "Contact";
+
+// contactTitle.textContent = "Contact";
+
+contactTitle.textContent = siteContent.contact["contact-h4"];
+
+// contactPar1.innerHTML = siteContent.contact.address.splut(' ').join('<br>');
+
 contactPar1.setAttribute('style', 'white-space: pre;');
 contactPar1.textContent = "123 Way 456 Street \r\n";
 contactPar1.textContent += "Somewhere, USA";
-contactPar2.textContent = "1 (888) 888-8888";
-contactPar3.textContent = "sales@greatidea.io";
+contactPar2.textContent = siteContent.contact.phone;
+// contactPar2.textContent = "1 (888) 888-8888";
+contactPar3.textContent = siteContent.contact.email;
+// contactPar3.textContent = "sales@greatidea.io";
 
 //Footer Changes
-footerPar.textContent = "Copyright Great Idea! 2018";
+footerPar.textContent = siteContent.footer.copyright;
+// footerPar.textContent = "Copyright Great Idea! 2018";
